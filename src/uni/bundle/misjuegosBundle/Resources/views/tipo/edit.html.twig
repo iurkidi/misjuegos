@@ -1,0 +1,20 @@
+{% extends 'uniMisJuegosBundle::layout.html.twig' %}
+
+{% block central %} 
+    <h1>tipo edit</h1>
+
+    {{ form(edit_form) }}
+    
+    <div class="LineaFormulario izquierda">  </div>
+    
+   
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('tipo') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+tipo:
+    path:     /
+    defaults: { _controller: "uniMisJuegosBundle:tipo:index" }
+
+tipo_show:
+    path:     /{id}/show
+    defaults: { _controller: "uniMisJuegosBundle:tipo:show" }
+
+tipo_new:
+    path:     /new
+    defaults: { _controller: "uniMisJuegosBundle:tipo:new" }
+
+tipo_create:
+    path:     /create
+    defaults: { _controller: "uniMisJuegosBundle:tipo:create" }
+    requirements: { _method: post }
+
+tipo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "uniMisJuegosBundle:tipo:edit" }
+
+tipo_update:
+    path:     /{id}/update
+    defaults: { _controller: "uniMisJuegosBundle:tipo:update" }
+    requirements: { _method: post|put }
+
+tipo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "uniMisJuegosBundle:tipo:delete" }
+    requirements: { _method: post|delete }

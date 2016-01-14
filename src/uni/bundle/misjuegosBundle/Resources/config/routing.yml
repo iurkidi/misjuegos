@@ -1,0 +1,23 @@
+uni_mis_juegos_plataforma:
+    resource: "@uniMisJuegosBundle/Resources/config/routing/plataforma.yml"
+    prefix:   /plataforma
+
+uni_mis_juegos_tipo:
+    resource: "@uniMisJuegosBundle/Resources/config/routing/tipo.yml"
+    prefix:   /tipo
+
+uni_mis_juegos_juego:
+    resource: "@uniMisJuegosBundle/Resources/config/routing/juego.yml"
+    prefix:   /juego
+
+uni_mis_juegos_homepage:
+    path:     /inicio
+    defaults: { _controller: uniMisJuegosBundle:Default:index }
+
+linkPlataformas:
+    path:     /linkPlataformas
+    defaults: { _controller: "uniMisJuegosBundle:plataforma:buscarPlat" }
+    
+linkTipos_conSeguridad:
+    resource: "@uniMisJuegosBundle/Resources/config/routing/conSeguridad/tipoConSeg.yml"
+    prefix:   /linkTipos/conSeguridad

@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+
+ {% block cuerpo %}
+ 
+        <div id="menuSup">
+            {% block menuSup %}
+                
+             <ul id="menu-horizontal">
+                 <li><a href="{{path('uni_mis_juegos_homepage')}}" title="Texto">INICIO</a>
+                      
+                 </li>
+                 
+                <li><a href="#" title="Texto">Plataformas</a>
+                    <ul>
+                        <li><a href="{{path('linkPlataformas')}}" title="Texto">Buscar</a></li>
+                        <li><a href="{{path('plataforma')}}" title="Texto">Listado</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{path('juego')}}" title="Texto">Juegos</a></li>
+                <li><a href="{{path('linkTipos')}}" title="Texto">Tipos</a></li>                                              
+             </ul>
+             
+            {% endblock %}
+        </div>
+ 
+        
+        <div id="central">
+            
+            {% block central %}
+            
+            {% endblock %}
+            
+        </div>
+ 
+ 
+ {% endblock %}

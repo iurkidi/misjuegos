@@ -1,0 +1,15 @@
+{% extends 'uniMisJuegosBundle::layout.html.twig' %}
+
+{% block central %} 
+    <h1>juego creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('juego') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

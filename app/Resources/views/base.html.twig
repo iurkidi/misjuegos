@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}MisJuegos Itziar{% endblock %}</title>
+        
+        {% block stylesheets %}
+                <link href="{{ asset('bundles/unimisjuegos/css/webjuegos.css') }}" type="text/css" rel="stylesheet" />
+        {% endblock %}
+        
+        <script src="{{ asset('bundles/unimisjuegos/js/jsjuegos.js') }}"></script>       
+      
+    </head>
+    <body>
+        
+        
+        <div id="cabecera" class="imagencab">
+            {% block cabecera %}
+                <h1 class="letralogo textocentrado izquierda"> Juegos Itziar </h1> 
+                 <img src="{{ asset('bundles/unimisjuegos/img/unienc.jpeg') }}" class="izquierda claseclearright"/>
+            {% endblock %}
+        </div>
+        
+        <div id="contenFormularios">
+            {% block cuerpo %}
+                Cuerpo
+            {% endblock %} 
+        </div>
+               {#<li><a href="{{path('uni_web_noticias_about')}}" title="Texto">ABOUT</a></li>#}           
+        <div id="pie">
+            {% block pie %}
+                <p class="izquierda separarIzq15 negrita">2015/2016</p>
+                <p class="derecha separarDcha20 negrita">Itziar Urkidi</p>
+            {% endblock %}
+        </div>
+       
+    </body>
+</html>
+

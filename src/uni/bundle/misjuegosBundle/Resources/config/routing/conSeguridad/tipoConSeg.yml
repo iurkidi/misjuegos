@@ -1,0 +1,3 @@
+linkTipos:
+    path:     /
+    defaults: { _controller: "uniMisJuegosBundle:tipo:index" }

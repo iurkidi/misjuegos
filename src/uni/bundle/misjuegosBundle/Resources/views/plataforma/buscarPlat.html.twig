@@ -1,0 +1,41 @@
+{% extends 'uniMisJuegosBundle::layout.html.twig' %}
+
+{% block central %} 
+    <h1>Plataformas</h1>
+    
+    <form id="selectCats" action="{{path('respPlat')}}" method="POST">
+            
+            <div class="LineaFormulario">  </div>
+            <div class="LineaFormulario">  </div>
+            <div class="LineaFormulario"> 
+                <p class="izquierda separarIzq15">Seleccione una plataforma de la lista y a continuación se mostrarán los juegos correspondientes.</p>
+            </div>
+            <div class="LineaFormulario">  </div>
+            <div class="LineaFormulario izquierda separarIzq15">      
+                <label for="nombre" class="letraverde">Plataforma: </label>                                    
+                     <select name="nombre" onblur="submitform(this)" class="izquierda">                         
+                     {% for entity in ePlat %}
+                        <option value="{{ entity.id }}">{{ entity.nombre }}</option>                        
+                     {% endfor %}
+                     </select>                                          
+             </div>
+             <input type="hidden" id="nomOculto" name="nomOculto" value=""/>
+    </form>
+
+{% if nomPlat is not null%}
+       <div class="LineaFormulario izquierda">  
+        <h1 class="izquierda separarIzq15">
+            Juegos de <a href="{{ path('plataforma_show', { 'id': entidad.id }) }}">{{ entidad.nombre }}</a>
+        </h1>
+       </div>
+       <div class="LineaFormulario izquierda">  </div>
+                
+            {% for juego in entidad.juegos %}             
+                <div class="LineaFormulario izquierda separarIzq15">
+                    <h2 class="izquierda separarIzq15"><a href="{{ path('juego_show', { 'id': juego.id }) }}">{{ juego.nombre }} - {{juego.puntuacion}}</a></h2>
+                </div>
+            {% endfor %}
+                      
+     {%endif%}              
+        
+    {% endblock %}

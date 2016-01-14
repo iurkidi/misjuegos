@@ -1,0 +1,41 @@
+{% extends 'uniMisJuegosBundle::layout.html.twig' %}
+
+{% block central %} 
+    <h1>tipo</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ entity.nombre }}</td>
+            </tr>
+        </tbody>
+    </table>                 
+                
+    {% for juego in entity.juegos %}             
+        <div class="LineaFormulario izquierda separarIzq15">
+            <h2 class="izquierda separarIzq15"><a href="{{ path('juego_show', { 'id': juego.id }) }}">{{ juego.nombre }} - {{juego.puntuacion}}</a></h2>
+                {% for plat in juego.plataformas %} 
+                    <h3 class="izquierda separarIzq15"><a href="{{ path('plataforma_show', { 'id': plat.id }) }}">{{ plat.nombre }}</a></h3>
+                {% endfor %}
+        </div>
+    {% endfor %}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('tipo') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('tipo_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

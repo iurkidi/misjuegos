@@ -1,0 +1,4 @@
+uni_mis_juegos:
+    resource: "@uniMisJuegosBundle/Resources/config/routing.yml"
+    prefix:   /
+
